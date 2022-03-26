@@ -5,6 +5,7 @@ namespace OOP_II_Lab
         public Form1()
         {
             InitializeComponent();
+            this.ActiveControl = usernameText;
         }
 
         private void loginBtn_Click(object sender, EventArgs e)
