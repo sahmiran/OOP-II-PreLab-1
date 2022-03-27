@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.optionPanel = new System.Windows.Forms.Panel();
+            this.exitBtn = new System.Windows.Forms.Button();
             this.shapePanel = new System.Windows.Forms.Panel();
             this.squareCheckBox = new System.Windows.Forms.CheckBox();
             this.roundCheckBox = new System.Windows.Forms.CheckBox();
@@ -44,6 +45,11 @@
             this.normalBtn = new System.Windows.Forms.Button();
             this.easyBtn = new System.Windows.Forms.Button();
             this.difficultyBtn = new System.Windows.Forms.Button();
+            this.difficultyLabel = new System.Windows.Forms.Label();
+            this.selectedDifficultyLabel = new System.Windows.Forms.Label();
+            this.shapeLabel = new System.Windows.Forms.Label();
+            this.selectedShapeLabel = new System.Windows.Forms.Label();
+            this.shapeSaveBtn = new System.Windows.Forms.Button();
             this.optionPanel.SuspendLayout();
             this.shapePanel.SuspendLayout();
             this.difficultyPanel.SuspendLayout();
@@ -53,6 +59,7 @@
             // optionPanel
             // 
             this.optionPanel.AutoScroll = true;
+            this.optionPanel.Controls.Add(this.exitBtn);
             this.optionPanel.Controls.Add(this.shapePanel);
             this.optionPanel.Controls.Add(this.shapeBtn);
             this.optionPanel.Controls.Add(this.difficultyPanel);
@@ -63,8 +70,20 @@
             this.optionPanel.Size = new System.Drawing.Size(111, 450);
             this.optionPanel.TabIndex = 0;
             // 
+            // exitBtn
+            // 
+            this.exitBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.exitBtn.Location = new System.Drawing.Point(0, 319);
+            this.exitBtn.Name = "exitBtn";
+            this.exitBtn.Size = new System.Drawing.Size(111, 23);
+            this.exitBtn.TabIndex = 5;
+            this.exitBtn.Text = "Exit";
+            this.exitBtn.UseVisualStyleBackColor = true;
+            this.exitBtn.Click += new System.EventHandler(this.exitBtn_Click);
+            // 
             // shapePanel
             // 
+            this.shapePanel.Controls.Add(this.shapeSaveBtn);
             this.shapePanel.Controls.Add(this.squareCheckBox);
             this.shapePanel.Controls.Add(this.roundCheckBox);
             this.shapePanel.Controls.Add(this.triangleCheckBox);
@@ -229,11 +248,60 @@
             this.difficultyBtn.UseVisualStyleBackColor = false;
             this.difficultyBtn.Click += new System.EventHandler(this.difficultyBtn_Click);
             // 
+            // difficultyLabel
+            // 
+            this.difficultyLabel.AutoSize = true;
+            this.difficultyLabel.Location = new System.Drawing.Point(193, 23);
+            this.difficultyLabel.Name = "difficultyLabel";
+            this.difficultyLabel.Size = new System.Drawing.Size(55, 15);
+            this.difficultyLabel.TabIndex = 1;
+            this.difficultyLabel.Text = "Difficulty";
+            // 
+            // selectedDifficultyLabel
+            // 
+            this.selectedDifficultyLabel.AutoSize = true;
+            this.selectedDifficultyLabel.Location = new System.Drawing.Point(254, 23);
+            this.selectedDifficultyLabel.Name = "selectedDifficultyLabel";
+            this.selectedDifficultyLabel.Size = new System.Drawing.Size(0, 15);
+            this.selectedDifficultyLabel.TabIndex = 2;
+            // 
+            // shapeLabel
+            // 
+            this.shapeLabel.AutoSize = true;
+            this.shapeLabel.Location = new System.Drawing.Point(193, 46);
+            this.shapeLabel.Name = "shapeLabel";
+            this.shapeLabel.Size = new System.Drawing.Size(39, 15);
+            this.shapeLabel.TabIndex = 3;
+            this.shapeLabel.Text = "Shape";
+            // 
+            // selectedShapeLabel
+            // 
+            this.selectedShapeLabel.AutoSize = true;
+            this.selectedShapeLabel.Location = new System.Drawing.Point(254, 50);
+            this.selectedShapeLabel.Name = "selectedShapeLabel";
+            this.selectedShapeLabel.Size = new System.Drawing.Size(0, 15);
+            this.selectedShapeLabel.TabIndex = 4;
+            // 
+            // shapeSaveBtn
+            // 
+            this.shapeSaveBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.shapeSaveBtn.Location = new System.Drawing.Point(0, 57);
+            this.shapeSaveBtn.Name = "shapeSaveBtn";
+            this.shapeSaveBtn.Size = new System.Drawing.Size(111, 23);
+            this.shapeSaveBtn.TabIndex = 4;
+            this.shapeSaveBtn.Text = "Save";
+            this.shapeSaveBtn.UseVisualStyleBackColor = true;
+            this.shapeSaveBtn.Click += new System.EventHandler(this.shapeSaveBtn_Click);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.selectedShapeLabel);
+            this.Controls.Add(this.shapeLabel);
+            this.Controls.Add(this.selectedDifficultyLabel);
+            this.Controls.Add(this.difficultyLabel);
             this.Controls.Add(this.optionPanel);
             this.Name = "Form2";
             this.Text = "Form2";
@@ -244,6 +312,7 @@
             this.customSubPanel.ResumeLayout(false);
             this.customSubPanel.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -265,5 +334,12 @@
         private Button customSaveBtn;
         private TextBox yValueText;
         private TextBox xValueText;
+        private Button exitBtn;
+        private Button saveoptionBtn;
+        private Label difficultyLabel;
+        private Label selectedDifficultyLabel;
+        private Label shapeLabel;
+        private Label selectedShapeLabel;
+        private Button shapeSaveBtn;
     }
 }

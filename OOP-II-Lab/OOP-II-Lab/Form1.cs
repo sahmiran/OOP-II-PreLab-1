@@ -1,3 +1,4 @@
+using OOP_II_Lab.Properties;
 namespace OOP_II_Lab
 {
     public partial class Form1 : Form
