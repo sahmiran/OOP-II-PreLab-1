@@ -46,5 +46,17 @@ namespace OOP_II_Lab.Properties {
                 this["Shape"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string Color {
+            get {
+                return ((string)(this["Color"]));
+            }
+            set {
+                this["Color"] = value;
+            }
+        }
     }
 }

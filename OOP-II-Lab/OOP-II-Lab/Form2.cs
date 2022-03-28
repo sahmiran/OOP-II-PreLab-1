@@ -18,6 +18,7 @@ namespace OOP_II_Lab
             InitializeComponent();
             selectedDifficultyLabel.Text = Settings.Default["Difficulty"].ToString();
             selectedShapeLabel.Text = Settings.Default["Shape"].ToString();
+            colorLaber.Text = Settings.Default["Color"].ToString();
         }
 
         private void hideSubMenu()
@@ -132,6 +133,31 @@ namespace OOP_II_Lab
             Settings.Default["Shape"] = temp;
             Settings.Default.Save();
             selectedShapeLabel.Text = temp;
+        }
+
+        private void renkSaveBtn_Click(object sender, EventArgs e)
+        {
+            string tempColor = "";
+
+            if (redCheckBox.Checked == true)
+            {
+                tempColor = tempColor + redCheckBox.Text.ToString() + " ";
+            }
+
+            if (blueCheckBox.Checked == true)
+            {
+                tempColor = tempColor + blueCheckBox.Text.ToString() + " ";
+            }
+
+            if (yellowCheckBox.Checked == true)
+            {
+                tempColor = tempColor + yellowCheckBox.Text.ToString() + " ";
+            }
+
+            Settings.Default["Color"] = tempColor;
+            Settings.Default.Save();
+            colorLaber.Text = tempColor;
+            
         }
     }
 }
