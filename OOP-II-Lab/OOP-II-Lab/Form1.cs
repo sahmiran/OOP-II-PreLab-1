@@ -7,6 +7,8 @@ namespace OOP_II_Lab
         {
             InitializeComponent();
             this.ActiveControl = usernameText;
+            usernameText.Text = Settings.Default["username"].ToString();
+
         }
 
         private void loginBtn_Click(object sender, EventArgs e)
@@ -19,12 +21,31 @@ namespace OOP_II_Lab
             {
                 new Form2().Show();
                 this.Hide();
+
+                string user;
+
+                user=usernameText.Text;
+                Settings.Default["username"] = user;
+                Settings.Default.Save();
+
+
             }
 
             else if (usernameText.Text == "user" && passwordText.Text == "user")
             {
                 new Form2().Show();
                 this.Hide();
+
+                string user;
+
+                user = usernameText.Text;
+                Settings.Default["username"] = user;
+                Settings.Default.Save();
+
+
+
+               
+
             }
 
             else
@@ -46,7 +67,7 @@ namespace OOP_II_Lab
 
         private void usernameText_TextChanged(object sender, EventArgs e)
         {
-            
+           
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
