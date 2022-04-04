@@ -11,6 +11,10 @@ namespace OOP_II_Lab
 
         private void loginBtn_Click(object sender, EventArgs e)
         {
+            
+            
+            
+            
             if (usernameText.Text == "admin" && passwordText.Text == "admin")
             {
                 new Form2().Show();
@@ -26,6 +30,36 @@ namespace OOP_II_Lab
             else
             {
                 MessageBox.Show("Kullanici Adi yada Sifre hatali");
+           
+           }
+        
+        
+        
+        
+        
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void usernameText_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                //karakteri göster.
+                passwordText.PasswordChar = '\0';
+            }
+            //deðilse karakterlerin yerine * koy.
+            else
+            {
+                passwordText.PasswordChar = '*';
             }
         }
     }
